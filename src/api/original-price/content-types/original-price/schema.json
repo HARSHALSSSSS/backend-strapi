@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "original_prices",
+  "info": {
+    "singularName": "original-price",
+    "pluralName": "original-prices",
+    "displayName": "original price "
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "originalprice": {
+      "required": true,
+      "type": "integer"
+    }
+  }
+}
