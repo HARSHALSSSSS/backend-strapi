@@ -1,12 +1,12 @@
 const path = require('path');
 
-module.exports = () => ({
+module.exports = ({ env }) => ({
   connection: {
-    client: 'sqlite',   // force sqlite
+    client: 'sqlite',
     connection: {
-      filename: path.join(__dirname, '..', '.tmp/data.db'),
+      filename: env('DATABASE_PATH') || path.join(__dirname, '..', env('DATABASE_FILENAME', 'data.db')),
     },
     useNullAsDefault: true,
-    acquireConnectionTimeout: 60000,
+    acquireConnectionTimeout: env.int('DATABASE_CONNECTION_TIMEOUT', 60000),
   },
 });
